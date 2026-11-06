@@ -1,6 +1,7 @@
 # MLOps Bike Prediction Pipeline
 
 > **Tech stack:** Python · Apache Airflow · MLflow · Great Expectations · Docker
+
 ### BCU CMP5366 – Data Management and Machine Learning Operations
 **Bikash Kushwaha | bikash9cmd | Kathmandu, Nepal**
 

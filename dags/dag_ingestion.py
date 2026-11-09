@@ -122,7 +122,7 @@ def load_to_mariadb(**context):
     """Load cleaned data into MariaDB fact table."""
     import sqlalchemy
     engine = sqlalchemy.create_engine(
-        f"mysql+mysqlclient://mlops:mlops123@mariadb:3306/depression_db"
+        "mysql+mysqldb://mlops:mlops123@mariadb:3306/depression_db"
     )
     df = pd.read_csv(CLEAN_FILE)
     df["loaded_at"] = datetime.utcnow()
@@ -134,7 +134,7 @@ def update_dimension_tables(**context):
     """Update date and demographic dimension tables (Star Schema)."""
     import sqlalchemy
     engine = sqlalchemy.create_engine(
-        "mysql+mysqlclient://mlops:mlops123@mariadb:3306/depression_db"
+        "mysql+mysqldb://mlops:mlops123@mariadb:3306/depression_db"
     )
     today = datetime.utcnow().date()
     with engine.connect() as conn:

@@ -120,6 +120,15 @@ curl http://localhost:8000/predictions/history?limit=10
 ./scripts/stop.sh
 ```
 
+### 5. Run the tests
+
+```bash
+pip install -r requirements-dev.txt
+python -m pytest
+```
+
+The API reads its MariaDB settings from `DB_USER`, `DB_PASSWORD`, `DB_HOST`, `DB_PORT` and `DB_NAME` (defaults match `docker-compose.yml`).
+
 ---
 
 ## Database Schema (Star Schema)

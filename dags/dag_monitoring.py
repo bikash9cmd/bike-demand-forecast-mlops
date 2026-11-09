@@ -145,7 +145,7 @@ def log_drift_to_db(**context):
 
     result = context["ti"].xcom_pull(task_ids="run_evidently_drift", key="drift_result")
     engine = sqlalchemy.create_engine(
-        "mysql+mysqlclient://mlops:mlops123@mariadb:3306/depression_db"
+        "mysql+mysqldb://mlops:mlops123@mariadb:3306/depression_db"
     )
     with engine.connect() as conn:
         conn.execute(sqlalchemy.text("""

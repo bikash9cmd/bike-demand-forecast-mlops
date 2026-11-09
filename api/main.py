@@ -19,6 +19,8 @@ from prometheus_client import Counter, Histogram, Gauge, generate_latest, CONTEN
 from starlette.responses import Response
 from sqlalchemy import create_engine, text
 
+from db import build_db_url
+
 # ── Prometheus Metrics ────────────────────────────────────────────────────────
 REQUEST_COUNT    = Counter("api_requests_total",    "Total API requests",          ["endpoint", "method", "status"])
 PREDICTION_COUNT = Counter("predictions_total",     "Total predictions made",       ["result"])
@@ -43,10 +45,7 @@ app.add_middleware(
 )
 
 # ── Database & Redis ──────────────────────────────────────────────────────────
-DB_URL = (
-    f"mysql+mysqlclient://{os.getenv('DB_USER','mlops')}:{os.getenv('DB_PASSWORD','mlops123')}"
-    f"@{os.getenv('DB_HOST','mariadb')}:{os.getenv('DB_PORT','3306')}/{os.getenv('DB_NAME','depression_db')}"
-)
+DB_URL = build_db_url()
 engine = create_engine(DB_URL, pool_pre_ping=True)
 
 redis_client = redis.Redis(

@@ -206,3 +206,7 @@ mlops-depression-pipeline/
 
 **Bikash Kushwaha** – AWS Certified Solutions Architect Associate  
 GitHub: [bikash9cmd](https://github.com/bikash9cmd) | LinkedIn: [bikash9cmd](https://linkedin.com/in/bikash9cmd)
+
+## License
+
+Released under the [MIT License](LICENSE).

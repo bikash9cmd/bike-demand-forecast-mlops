@@ -1,6 +1,6 @@
 # MLOps Bike Prediction Pipeline
 
-> **Tech stack:** Python · Apache Airflow · MLflow · Great Expectations · Docker
+> **Tech stack:** Python · Apache Airflow · FastAPI · scikit-learn · Redis · MariaDB · Evidently AI · Prometheus · Grafana · Docker Compose
 
 ### BCU CMP5366 – Data Management and Machine Learning Operations
 **Bikash Kushwaha | bikash9cmd | Kathmandu, Nepal**
